@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- {% if title %}-->
+         {% if title %}
         <title>{{title}} - Flaskapp</title>
-      <!--   {% else %}-->
-        <title>Welcome to Flaskapp</title>
-      <!--   {% endif %} -->
+         {% else %}
+              <title>Welcome to Flaskapp</title>
+         {% endif %}
       <link href="base.css" rel="stylesheet" type="text/css">
     </head>
     <body>
@@ -19,28 +19,28 @@
               <li><span id="flaskapp">Flaskapp:</span></li>
               <li><a href = "{{ url_for("index") }}">Home</a></li>
               <li><a href="{{ url_for("explore") }}">Explore</a></li>
-              <!--   {% if current_user.is_anonymous %}
+                {% if current_user.is_anonymous %}
               <a href = "{{ url_for("login") }}">Login</a>
-              <!-- {% else %}-->
+               {% else %}
               <li><a href = "{{ url_for("user", username=current_user.username) }}">
                 Profile</a></li>
                 <li><a href= "{{ url_for("logout") }}">Logout</a></li>
-                <!-- {% endif %} -->
+                 {% endif %}
           </ul>
         </div>
       </nav>
         <hr>
-      <!--  {% with messages = get_flashed_messages() %}
-        {% if messages %} -->
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
         <ul>
-           <!--{% for message in messages %}-->
-            <!--<li>{{ message }}</li>-->
-            <!-- {% endfor %}->
+           {% for message in messages %}
+            <li>{{ message }}</li>
+             {% endfor %}
         </ul>
-      <!--{% endif %}
+      {% endif %}
         {% endwith %}
 
-        {% block content  %} {% endblock %}-->
+        {% block content  %} {% endblock %}
         <hr>
     </body>
 </html>
