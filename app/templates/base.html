@@ -1,38 +1,46 @@
 <!DOCTYPE html>
 <html>
     <head>
-        {% if title %}
+        <!-- {% if title %}-->
         <title>{{title}} - Flaskapp</title>
-        {% else %}
+      <!--   {% else %}-->
         <title>Welcome to Flaskapp</title>
-        {% endif %}
+      <!--   {% endif %} -->
+      <link href="base.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <div>
-            Flaskapp:
-            <a href = "{{ url_for("index") }}">Home</a>
-            <a href="{{ url_for("explore") }}">Explore</a>
-            {% if current_user.is_anonymous %}
-            <a href = "{{ url_for("login") }}">Login</a>
-            {% else %}
-            <a href = "{{ url_for("user", username=current_user.username) }}">
-                Profile</a>
-            <a href= "{{ url_for("logout") }}">Logout</a>
-            {% endif %}
+      <header>
+        <h1>Linkin<span class="highlight">G</span></h1>
+      </header>
+      <nav>
+        <div class="menu">
+
+            <ul>
+              <li><span id="flaskapp">Flaskapp:</span></li>
+              <li><a href = "{{ url_for("index") }}">Home</a></li>
+              <li><a href="{{ url_for("explore") }}">Explore</a></li>
+              <!--   {% if current_user.is_anonymous %}
+              <a href = "{{ url_for("login") }}">Login</a>
+              <!-- {% else %}-->
+              <li><a href = "{{ url_for("user", username=current_user.username) }}">
+                Profile</a></li>
+                <li><a href= "{{ url_for("logout") }}">Logout</a></li>
+                <!-- {% endif %} -->
+          </ul>
         </div>
+      </nav>
         <hr>
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
+      <!--  {% with messages = get_flashed_messages() %}
+        {% if messages %} -->
         <ul>
-            {% for message in messages %}
-            <li>{{ message }}</li>
-            {% endfor %}
+           <!--{% for message in messages %}-->
+            <!--<li>{{ message }}</li>-->
+            <!-- {% endfor %}->
         </ul>
-        {% endif %}
+      <!--{% endif %}
         {% endwith %}
 
-        {% block content  %} {% endblock %}
-        
+        {% block content  %} {% endblock %}-->
+        <hr>
     </body>
 </html>
-
