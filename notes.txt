@@ -1,6 +1,6 @@
 WORK LOG
 
-DAY ONE 
+DAY ONE
 
  have commented out the python placeholder
 
@@ -12,7 +12,7 @@ for  i  have a navigation bar of  roughly 500 px
  which makes menu consisting of list of link approx 40 percent of the screen
 
  although adding percentage disrupts the flow of flex box
- sticlimg with flex provides fluidity
+ styling with flex provides fluidity
  no need of percentage width and height
  flex box adjusts to any condition
 
@@ -22,3 +22,12 @@ keeping header and nav to 100 percent to ensure we get full view
  basic layout is complete for the index percentage
 
  now i should push it onto my repository
+
+
+ DAY Two
+
+ working on login.css ad login.html files
+ trying out black background and transparent input boxeswith white text color
+ separate css files have allocated
+ sign in box has been centered
+ending it here
