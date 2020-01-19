@@ -1,9 +1,16 @@
 {% extends "base.html" %}
 
-{% block content %}
-  <h1>Sign In</h1>
+ {% block content %}
+ {% block head_css %}
+ {{super()}}
+ <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='login.css')}}"/>
+ {% endblock%}
+
+  <h1 id="form_heading">Sign In</h1>
+ <div class="form-content">
   <form action = "" method = "POST">
       {{ form.hidden_tag() }}
+      <div class="form_inner">
       <p>
         {{ form.username.label }}<br>
         {{ form.username(size=32, placeholder="Your name here.") }}
@@ -18,10 +25,12 @@
         <span style="color: red;">[{{ error }}]</span>
         {% endfor %}
       </p>
-      <p>{{ form.remember_me()}}    {{ form.remember_me.label }}</p>
-      <p>{{ form.submit() }}</p>
+      <p id="check-box">{{ form.remember_me()}}    {{ form.remember_me.label }}</p>
+      <p id="button_sign_in">{{ form.submit() }}</p>
+      </div>
   </form>
-  <p>New User? <a href="{{ url_for("register") }}">Click to Register!</a></p>
+  </div>
+  <p id="">New User? <a href="{{ url_for("register") }}">Click to Register!</a></p>
   <p>
     Forgot Your Password?
     <a href="{{ url_for("reset_password_request") }}">Click to Reset It</a>
